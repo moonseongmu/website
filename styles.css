@@ -63,6 +63,10 @@ main-footer {
     max-width: 600px;
     width: 100%;
 }
+
+main {
+    margin-bottom: 20px;
+}
  
 .footer-links {
     display: flex;

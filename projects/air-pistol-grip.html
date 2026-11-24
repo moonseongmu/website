@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-SG">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The homepage of Moon Seongmu">
+    <title>Moon Seongmu</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/email_protection.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+        <ul class="nav-bar">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="/cv.html">CV</a></li>
+        </ul>
+        </nav>
+    </header>
+
+    <main-footer>
+        <main>
+            <h1>3D printed customised air pistol grip</h1>
+
+            <img src="/images/grip_render_no_bg.png" alt="3d model render of the customised air pistol grip" style="width: 100%; height: auto;">
+            <p>
+                For the past 9 years that I have shot air pistol, the grips have always been ill fitting. 
+                Even with the smallest standard grips, either it was too long or too thick, 
+                especially since my fingers are relatively small. 
+                So when I built my Voron 0.2, my first 3d printer, the first thing I printed on it after the callibration prints was a customised grip that was better fit for myself.
+            </p>
+
+            <p>
+                Of course, being an Olympic sport, there are rules about what the grip can or cannot be shaped like, dictated by the rule book from the International Sport Shooting Federation (ISSF).
+                I read through the rules, took note of the resitrictions on the grips and got to designing my own grip. 
+                Unfortunately I could not use some other more powerful/more convenient photogrammetry tools because they were built for CUDA, and I did not possess a computer with an Nvidia GPU.
+                Therefore I used the open source photogrammetry tools COLMAP and openMVS to scan and reconstruct my previously best fitting grip, from which I would tweak to fit my hand.
+            </p>
+            <p>
+                Of course there were setbacks initially. The output of photogrammetry is a point cloud or a mesh file, both of which traditional CAD software cannot process.
+                However, I did have some previous experience with Blender, a 3d mesh modelling software normally used for animation, which led me to try to model the grip in Blender. 
+                However, the lack of constraints and real measurements were limiting factors in modelling an accurate grip suitable for mating with a pistol. 
+                Luckily, Autodesk Inventor allows importing meshes as reference geometry, and had powerful surfacing tools, which are both needed to reconstruct the grip.
+                I used Blender to make a simplified mesh model of the curved surfaces, which I imported into Inventor 
+            </p>
+            <p> 
+                I used Inventor's freeform modelling capabilities to carefully reconstruct the the complex curves present on the grip.
+                After the CAD model  roughly matched the scanned grip, I added the constraints from the rules, then printed a first prototype.
+                As expected it was too big to fit my hand comfortably. I then adjusted the grip in the places that were too big and printed it again. 
+                I adjusted and printed again and again until the grip perfectly hugged my hand. Having a 3d printer available definitely helped lower the iteration time considerably, 
+                and showed me the utility of rapid prototyping machines in manufacturing and design.
+
+            </p>
+            <img src="/images/grip_prototypes.jpg" alt="various prototypes of the 3d printed grip"  style="width: 100%; height: auto;">
+
+            <p>
+                And here's the final grip that I've been using for a few competitions, which has managed to increase my comfort and boost my scores a little bit:
+            </p>
+
+            <img src="/images/grip_on_pistol.jpg" alt="the final 3d printed grip mounted on the air pistol" style="width: 100%; height: auto;">
+
+            <p>
+                Skills gained during this project: Autodesk Inventor, following technical specification and 3d printing
+            </p>
+        </main> 
+        <footer>
+            <ul class="footer-links">
+                <li><a href="https://www.github.com/moonseongmu">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/seongmu-moon/">LinkedIn</a></li>
+                <li><a id="obfuscated_email" href="/placeholder" rel="nofollow, noindex">Email</a></li>
+            </ul>
+        </footer>
+        
+    </main-footer>
+</body>
+</html>
